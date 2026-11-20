@@ -1,7 +1,5 @@
 <div align="center">
-  <img src="app.ico" width="76" alt="StudioCleaner" />
-  <h1>StudioCleaner</h1>
-  <p>开源 Windows 系统清理与维护工具 · PySide6 + Fluent Design</p>
+  <img src="docs/banner.png" alt="StudioCleaner" width="900" />
   <p>
     <img alt="platform" src="https://img.shields.io/badge/Windows-10%20%2F%2011-0078D4?logo=windows" />
     <img alt="python" src="https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white" />

@@ -21,11 +21,11 @@ def build_pixmap(size: int = 256) -> QPixmap:
     radius = size * 0.22
     p.drawRoundedRect(QRectF(size * 0.04, size * 0.04, size * 0.92, size * 0.92), radius, radius)
 
-    f = QFont("Segoe UI", int(size * 0.44))
+    f = QFont("Segoe UI", int(size * 0.38))
     f.setBold(True)
     p.setFont(f)
     p.setPen(QColor("#FFFFFF"))
-    p.drawText(QRectF(0, -size * 0.02, size, size), Qt.AlignCenter, "WM")
+    p.drawText(QRectF(0, -size * 0.02, size, size), Qt.AlignCenter, "SC")
     p.end()
     return pm
 
