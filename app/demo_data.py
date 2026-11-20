@@ -111,9 +111,9 @@ DUPLICATE_GROUPS = [
     {
         "name": "IMG_20261117_081530.jpg", "kind": "照片", "size": 5_138_432,
         "copies": [
-            ("C:\\Users\\17733\\Pictures\\2026\\IMG_20261117_081530.jpg", "2026-11-17 08:15"),
-            ("C:\\Users\\17733\\Pictures\\2026\\IMG_20261117_081530 (1).jpg", "2026-11-17 08:16"),
-            ("C:\\Users\\17733\\Downloads\\IMG_20261117_081530.jpg", "2026-11-17 09:02"),
+            ("C:\\Users\\Demo\\Pictures\\2026\\IMG_20261117_081530.jpg", "2026-11-17 08:15"),
+            ("C:\\Users\\Demo\\Pictures\\2026\\IMG_20261117_081530 (1).jpg", "2026-11-17 08:16"),
+            ("C:\\Users\\Demo\\Downloads\\IMG_20261117_081530.jpg", "2026-11-17 09:02"),
         ],
         "c1": "#F43F5E", "c2": "#F59E0B",
     },
@@ -128,16 +128,16 @@ DUPLICATE_GROUPS = [
     {
         "name": "微信图片_20261019_204455.jpg", "kind": "照片", "size": 2_516_582,
         "copies": [
-            ("C:\\Users\\17733\\Pictures\\微信\\微信图片_20261019_204455.jpg", "2026-10-19 20:44"),
-            ("C:\\Users\\17733\\Downloads\\微信图片_20261019_204455.jpg", "2026-10-19 20:45"),
+            ("C:\\Users\\Demo\\Pictures\\微信\\微信图片_20261019_204455.jpg", "2026-10-19 20:44"),
+            ("C:\\Users\\Demo\\Downloads\\微信图片_20261019_204455.jpg", "2026-10-19 20:45"),
         ],
         "c1": "#22C55E", "c2": "#15803D",
     },
     {
         "name": "Screenshot_2026-10-26_112233.png", "kind": "截图", "size": 2_411_724,
         "copies": [
-            ("C:\\Users\\17733\\Pictures\\截图\\Screenshot_2026-10-26_112233.png", "2026-10-26 11:22"),
-            ("C:\\Users\\17733\\Desktop\\Screenshot_2026-10-26_112233.png", "2026-10-26 11:23"),
+            ("C:\\Users\\Demo\\Pictures\\截图\\Screenshot_2026-10-26_112233.png", "2026-10-26 11:22"),
+            ("C:\\Users\\Demo\\Desktop\\Screenshot_2026-10-26_112233.png", "2026-10-26 11:23"),
         ],
         "c1": "#475569", "c2": "#1E293B",
     },
@@ -217,3 +217,4 @@ def demo_clean_items() -> list[CleanItem]:
             "项目产物", RISK_NORMAL, False, False, scan_project, clean_project,
         ),
     ]
+

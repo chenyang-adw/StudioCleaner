@@ -7,7 +7,7 @@ from qfluentwidgets import CaptionLabel, FluentIcon as FIF, StrongBodyLabel
 from ... import APP_TITLE, APP_VERSION
 from ..theme import palette
 from ..widgets.base import Page, SectionCard
-from ..widgets.contact import QQ_NUMBER, contact_card
+from ..widgets.contact import ISSUES_URL, contact_card
 
 FAQ = [
     ("需要管理员权限吗？",
@@ -19,18 +19,15 @@ FAQ = [
     ("「疑似捆绑」标记准不准？",
      "那是按「无卸载程序 / 无发布者 / 安装目录不存在 / 名称特征」做的启发式提示，"
      "只用于提醒你多看一眼，不代表一定是流氓软件，程序不会自动删除任何东西。"),
-    ("PDF 工具箱选错文件怎么办？",
-     "选到图片或损坏文件时输入框下方会立刻变红提示，并告诉你去用哪个功能。"
-     "比如选中 PNG 时会提示改用「图片转 PDF」。"),
     ("断网能用吗？",
-     "能。清理、照片视频、空间分析、硬件信息、应用卸载全部在本机完成，不需要联网，"
+     "能。清理、硬件信息、应用卸载全部在本机完成，不需要联网，"
      "也不会把任何文件上传出去。"),
 ]
 
 
 class ContactPage(Page):
     def __init__(self, parent=None) -> None:
-        super().__init__("联系我们", f"有问题可咨询 QQ {QQ_NUMBER}，也欢迎反馈想加的功能", parent)
+        super().__init__("帮助与反馈", "遇到问题或有功能建议，欢迎在 GitHub Issues 反馈", parent)
         self.card = contact_card(self)
         self.add_widget(self.card)
         self.add_widget(self._build_faq())
@@ -54,7 +51,7 @@ class ContactPage(Page):
             box.addWidget(a)
             card.content_layout.addLayout(box)
         footer = CaptionLabel(
-            f"以上都没解决？加 QQ {QQ_NUMBER} 找我，记得附上诊断信息。", card
+            f"以上都没解决？到 GitHub Issues 提一条：{ISSUES_URL}", card
         )
         footer.setStyleSheet(f"color:{palette()['accent']};")
         card.content_layout.addWidget(footer)

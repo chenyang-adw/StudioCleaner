@@ -22,7 +22,7 @@ from ..theme import palette
 from .base import SectionCard
 from .buttons import GradientButton, OutlineButton
 
-QQ_NUMBER = "1773323815"
+ISSUES_URL = "https://github.com/chenyang-adw/StudioCleaner/issues"
 
 
 def _hw_field(name: str, label: str) -> str:
@@ -63,55 +63,54 @@ def copy_text(parent, text: str, tip: str = "已复制到剪贴板") -> None:
                     position=InfoBarPosition.TOP_RIGHT, duration=2200)
 
 
-def open_qq_chat(parent=None) -> None:
-    """尝试用 tencent:// 协议直接打开与 QQ 的对话。"""
-    url = QUrl(f"tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin={QQ_NUMBER}")
-    ok = QDesktopServices.openUrl(url)
+def open_issues(parent=None) -> None:
+    """在浏览器中打开 GitHub Issues。"""
+    ok = QDesktopServices.openUrl(QUrl(ISSUES_URL))
     if not ok and parent is not None:
         InfoBar.warning(
-            "未找到 QQ",
-            f"没能唤起 QQ，请手动搜索 QQ 号 {QQ_NUMBER}",
+            "未能打开浏览器",
+            f"请手动访问 {ISSUES_URL}",
             parent=parent, position=InfoBarPosition.TOP_RIGHT, duration=4000,
         )
 
 
 def contact_card(parent, compact: bool = False) -> QWidget:
-    """联系方式卡片：QQ 号 + 复制 + 加好友按钮 + 复制诊断信息。"""
+    """反馈卡片：Issue 地址 + 复制 + 打开按钮 + 复制诊断信息。"""
     card = SectionCard(
-        "联系我们",
-        "使用中有任何问题，或者想加新功能，都可以直接找我" if not compact else "有问题可咨询",
+        "帮助与反馈",
+        "遇到问题或有功能建议，欢迎在 GitHub Issues 反馈" if not compact else "欢迎反馈问题与建议",
         FIF.CHAT,
     )
 
     row = QHBoxLayout()
     row.setSpacing(10)
-    label = CaptionLabel("QQ", card)
+    label = CaptionLabel("GitHub", card)
     label.setStyleSheet(f"color:{palette()['sub']};")
     row.addWidget(label, 0, Qt.AlignVCenter)
 
-    number = QLabel(QQ_NUMBER, card)
-    f = QFont("Consolas", 15)
+    number = QLabel("提交 Issue", card)
+    f = QFont("Microsoft YaHei UI", 13)
     f.setBold(True)
     number.setFont(f)
     number.setStyleSheet(f"color:{palette()['accent']};")
     number.setTextInteractionFlags(Qt.TextSelectableByMouse)
     row.addWidget(number, 0, Qt.AlignVCenter)
 
-    btn_copy = OutlineButton("复制 QQ 号", card)
+    btn_copy = OutlineButton("复制 Issue 地址", card)
     btn_copy.setMinimumHeight(32)
     btn_copy.clicked.connect(
-        lambda: copy_text(card, QQ_NUMBER, f"QQ 号 {QQ_NUMBER} 已复制")
+        lambda: copy_text(card, ISSUES_URL, "Issue 地址已复制")
     )
     row.addWidget(btn_copy)
 
-    btn_chat = GradientButton("在 QQ 中找我", card)
+    btn_chat = GradientButton("在浏览器中打开", card)
     btn_chat.setMinimumHeight(32)
-    btn_chat.clicked.connect(lambda: open_qq_chat(card))
+    btn_chat.clicked.connect(lambda: open_issues(card))
     row.addWidget(btn_chat)
     row.addStretch(1)
     card.content_layout.addLayout(row)
 
-    tip = CaptionLabel("有问题可咨询　·　欢迎反馈你希望增加的功能", card)
+    tip = CaptionLabel("反馈时请附上下面的诊断信息（手动粘贴，不会自动上传）", card)
     tip.setStyleSheet(f"color:{palette()['sub']};")
     card.content_layout.addWidget(tip)
 
