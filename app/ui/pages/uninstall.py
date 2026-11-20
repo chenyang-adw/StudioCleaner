@@ -158,7 +158,7 @@ class AppRow(CardWidget):
         name_row = QHBoxLayout()
         name_row.setSpacing(7)
         name = StrongBodyLabel(app.name, self)
-        name.setSizePolicy(QSizePolicy.Ignored, QSizePolicy.Preferred)
+        name.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
         name_row.addWidget(name)
         if not app.uninstall_string:
             name_row.addWidget(Badge("不可卸载", "muted", self))

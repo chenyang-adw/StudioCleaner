@@ -1,0 +1,29 @@
+name: 功能建议
+description: 想要的新功能或体验改进
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: 你希望解决什么问题
+      description: 描述场景，而不只是功能名
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: 你设想的方案
+  - type: dropdown
+    id: area
+    attributes:
+      label: 相关模块
+      options:
+        - 清理
+        - 硬件信息
+        - 应用卸载
+        - 照片视频
+        - 空间分析
+        - 启动项
+        - 系统维护
+        - 界面 / 其它

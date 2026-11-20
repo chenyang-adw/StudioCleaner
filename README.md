@@ -13,6 +13,10 @@
 StudioCleaner 是一个本地优先的 Windows 清理工具：不用登录、不联网、不上传任何文件。
 界面基于 PySide6 与 PySide6-Fluent-Widgets，单文件 exe 打开即用。
 
+![20 秒演示](docs/demo.gif)
+
+> 演示使用示例应用列表；清理页的扫描是真实读取，录制过程中没有执行删除。
+
 如果这个项目对你有用，点个 **Star** ⭐ 就是最大的支持。
 
 ---
@@ -153,3 +157,35 @@ StudioCleaner/
 ## License
 
 [MIT](LICENSE)
+
+---
+
+## English
+
+StudioCleaner is an open-source Windows cleanup and maintenance tool built with
+**PySide6** and **PySide6-Fluent-Widgets**. It runs fully offline: no account,
+no telemetry, no file uploads.
+
+**Working now**
+
+- System / browser / network / dev-cache cleanup with per-item toggles
+- Read-only hardware inventory (CPU, board, BIOS, RAM, GPU, disk) with copy & TXT export
+- Application uninstall: registry enumeration, search, sorting, leftover scan, registry backup
+- Cleanup history with CSV export, light / dark / system theme
+
+**UI preview only (no real scanning yet)**
+
+- Photos & videos, disk space map, startup items, system maintenance actions
+
+Download the single-file `StudioCleaner.exe` from
+[Releases](../../releases). Windows 10 1709+ / Windows 11, x64.
+
+Build from source:
+
+```bat
+python -m venv .venv
+.venv\Scripts\pip install -r requirements.txt pyinstaller
+.venv\Scripts\python -m PyInstaller --noconfirm --clean StudioCleaner.spec
+```
+
+Issues and feature requests: [GitHub Issues](../../issues). MIT licensed.

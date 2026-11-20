@@ -1,0 +1,45 @@
+name: Bug 反馈
+description: 程序崩溃、功能异常、界面错位
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请尽量附上「设置 → 帮助与反馈」里复制的诊断信息。
+  - type: textarea
+    id: what
+    attributes:
+      label: 发生了什么
+      description: 实际现象与预期行为
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开 ...
+        2. 点击 ...
+        3. 出现 ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 版本
+      description: 左下角菜单 →「关于 StudioCleaner」里的版本号
+      placeholder: v2.0.0
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: 系统
+      placeholder: Windows 11 23H2 / 2560x1600 / 150%
+  - type: textarea
+    id: logs
+    attributes:
+      label: 诊断信息 / 日志
+      description: 可粘贴诊断信息，或 %LOCALAPPDATA%\StudioCleaner\studio_cleaner.log 的最后一段
+      render: text

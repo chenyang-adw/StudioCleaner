@@ -6,4 +6,4 @@ __pycache__/
 *.db
 *.log
 _delivery/
-_baseline/
+_baseline/docs/demo_frames/
